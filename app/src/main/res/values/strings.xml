@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">urana</string>
+
+    <!-- Aturan Main -->
+    <string name="aturan_main">Aturan Main</string>
+    <string name="aturan_main2">Baca dulu biar paham, malu bertanya sesat di jalan</string>
+    <string name="aturan_main_1">1. Tuliskan Nama Pemain yang akan bermain di awal permainan</string>
+    <string name="aturan_main_2">2. Kemudian klik Mulai Permainan</string>
+    <string name="aturan_main_3">3. Jawab Pertanyaan yang muncul dengan Jujur</string>
+    <string name="aturan_main_4">4. Pemain yang menolak untuk menjawab akan mendapatkan poin -1</string>
+    <string name="aturan_main_5">5. Pemain yang dapat menjawab pertanyaan mendapatkan poin +1</string>
+    <string name="aturan_main_6">6. Permainan akan berakhir jika salah satu pemain memilih untuk menekan tombol akhiri permainan</string>
+    <string name="aturan_main_7">7. Setelah permainan selesai, pemenang bisa meminta hadiah secara pribadi kepada pemain yang kalah</string>
+
+    <!-- Halaman About -->
+    <string name="about">About Us</string>
+    <string name="team">\'Dah Lah Capek\' Team</string>
+    <string name="team_name">Nisa Fitrianti \n Aliyyulman Jihan</string>
+    <string name="poin_permainan">Poin Permainan</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+</resources>
