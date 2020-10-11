@@ -18,8 +18,9 @@
     <string name="team_name">Nisa Fitrianti \n Aliyyulman Jihan</string>
     <string name="poin_permainan">Poin Permainan</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <!-- Form Validation -->
+    <string name="wajib_diisi">Kolom Pertanyaan dan Kategori wajib di isi</string>
+
 
 
 </resources>

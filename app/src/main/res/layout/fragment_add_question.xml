@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/colorPrimary"
-    tools:context=".ui.AddQuestion">
+    tools:context=".ui.AddQuestionFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -53,13 +53,13 @@
 
         <EditText
             android:id="@+id/et_pertanyaan"
-            android:layout_width="337dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="18dp"
             android:layout_weight="1"
             android:ems="10"
             android:inputType="textPersonName"
-            android:hint="Masukan Pertanyaanmu"/>
+            android:hint="Bagaimana Kamu Melihat Dirimu?"/>
     </LinearLayout>
 
     <LinearLayout
@@ -82,13 +82,13 @@
 
         <EditText
             android:id="@+id/et_kategori"
-            android:layout_width="337dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="18dp"
             android:layout_weight="1"
             android:ems="10"
             android:inputType="textPersonName"
-            android:hint="Masukan kategori dari pertanyaan"/>
+            android:hint="self esteem"/>
     </LinearLayout>
 
     <Button

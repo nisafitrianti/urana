@@ -9,7 +9,7 @@ data class QuestionList (
     @PrimaryKey(autoGenerate = true)
     val id: Int = 0,
     val question: String,
-    val chategori: String
+    val category: String
 )
 
 @Dao
