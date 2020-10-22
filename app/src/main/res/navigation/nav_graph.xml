@@ -37,6 +37,9 @@
         <action
             android:id="@+id/action_home2_to_addQuestion"
             app:destination="@id/addQuestion" />
+        <action
+            android:id="@+id/action_home2_to_playFragment"
+            app:destination="@id/playFragment" />
     </fragment>
     <fragment
         android:id="@+id/addQuestion"
@@ -45,6 +48,14 @@
         tools:layout="@layout/fragment_add_question" >
         <action
             android:id="@+id/action_addQuestion_to_home2"
+            app:destination="@id/home2" />
+    </fragment>
+    <fragment
+        android:id="@+id/playFragment"
+        android:name="org.d3ifcool.urana.ui.PlayFragment"
+        android:label="PlayFragment" >
+        <action
+            android:id="@+id/action_playFragment_to_home2"
             app:destination="@id/home2" />
     </fragment>
 </navigation>

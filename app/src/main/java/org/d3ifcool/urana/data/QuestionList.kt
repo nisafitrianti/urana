@@ -20,8 +20,6 @@ interface QuestionListDao {
     @Query("SELECT * FROM questionlist ORDER BY question")
     fun getData(): LiveData<List<QuestionList>>
 
-    @Query("DELETE FROM questionlist WHERE id IN (:ids)")
-    fun deleteData(ids: List<Int>)
 }
 
 @Database(entities = [QuestionList::class], version = 1, exportSchema = false)

@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.findNavController
+import com.google.firebase.FirebaseApp
 import org.d3ifcool.urana.R
 import org.d3ifcool.urana.databinding.FragmentHomeBinding
 
@@ -34,6 +35,11 @@ class HomeFragment : Fragment() {
 
         binding.btnBuatPertanyaan.setOnClickListener {
             view?.findNavController()?.navigate(R.id.action_home2_to_addQuestion)
+        }
+
+        binding.btnMulaiPermainan.setOnClickListener {
+            FirebaseApp.initializeApp(requireContext())
+            view?.findNavController()?.navigate(R.id.action_home2_to_playFragment)
         }
 
         setHasOptionsMenu(true)

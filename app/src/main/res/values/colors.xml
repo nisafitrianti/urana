@@ -4,4 +4,9 @@
     <color name="colorPrimaryDark">#4DA6EA</color>
     <color name="colorAccent">#FDA624</color>
     <color name="titleColor">#0165C0</color>
+
+    <color name="colorGreen">#00CE5F</color>
+    <color name="colorAbuabu">#DADADA</color>
+    <color name="colorButton2">#FDA624</color>
+    <color name="black">#000000</color>
 </resources>

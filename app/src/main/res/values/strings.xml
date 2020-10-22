@@ -21,6 +21,21 @@
     <!-- Form Validation -->
     <string name="wajib_diisi">Kolom Pertanyaan dan Kategori wajib di isi</string>
 
+    <!-- OnBoarding -->
+    <string name="skip_intro">Skip Intro</string>
+    <string name="next">next</string>
+    <string name="lanjut">Lanjut</string>
+    <string name="kiri"><![CDATA[<]]></string>
+    <string name="tambahkan_pertemanan">Tambahkan Pertemanan</string>
+    <string name="mulai_permainan">Mulai Permainan</string>
 
+    <!-- Profile -->
+    <string name="example">Example</string>
+    <string name="id">ID</string>
+    <string name="name">Name</string>
+    <string name="email_address">Email address</string>
+    <string name="sign_out">Sign out</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>
