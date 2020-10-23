@@ -11,8 +11,8 @@ import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
-import org.d3ifcool.urana.viewmodel.AddQuestionViewModel
-import org.d3ifcool.urana.viewmodel.AddQuestionViewModelFactory
+import org.d3ifcool.urana.viewmodel.QuestionViewModel
+import org.d3ifcool.urana.viewmodel.QuestionViewModelFactory
 import org.d3ifcool.urana.R
 import org.d3ifcool.urana.data.QuestionList
 import org.d3ifcool.urana.data.QuestionListDB
@@ -59,11 +59,11 @@ class AddQuestionFragment : Fragment() {
         return binding.root
     }
 
-    private val viewModel: AddQuestionViewModel by lazy {
+    private val viewModel: QuestionViewModel by lazy {
         val dataSource = QuestionListDB.getInstance(requireContext()).dao
         val factory =
-            AddQuestionViewModelFactory(dataSource)
-        ViewModelProvider(this, factory).get(AddQuestionViewModel::class.java)
+            QuestionViewModelFactory(dataSource)
+        ViewModelProvider(this, factory).get(QuestionViewModel::class.java)
     }
 
     private fun showMessage(messageResId: Int) {

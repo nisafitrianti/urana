@@ -14,10 +14,9 @@ import org.d3ifcool.urana.data.Pemain
 import org.d3ifcool.urana.ui.PlayFragment
 import org.d3ifcool.urana.viewmodel.PemainViewModel
 
-class PemainAdapter() : ListAdapter<Pemain, PemainAdapter.ViewHolder>(DIFF_CALLBACK) {
+class PemainAdapter(private val handler: ClickHandler) : ListAdapter<Pemain, PemainAdapter.ViewHolder>(DIFF_CALLBACK) {
 
     private lateinit var viewmodel: PemainViewModel
-    private val selectionIds = ArrayList<Int>()
 
     companion object {
         private val DIFF_CALLBACK = object : DiffUtil.ItemCallback<Pemain>()
@@ -36,7 +35,6 @@ class PemainAdapter() : ListAdapter<Pemain, PemainAdapter.ViewHolder>(DIFF_CALLB
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val inflater = LayoutInflater.from(parent.context)
         val view = inflater.inflate(R.layout.list_item_pemain, parent, false)
-        //viewmodel = ViewModelProvider(parent.context as FragmentActivity).get(PemainViewModel::class.java)
         return ViewHolder(view)
     }
 
@@ -48,9 +46,12 @@ class PemainAdapter() : ListAdapter<Pemain, PemainAdapter.ViewHolder>(DIFF_CALLB
     {
         fun bind(pemain: Pemain){
             itemView.pemainTextView.text = pemain.name
-            itemView.btn_delete.setOnClickListener {
-                //viewmodel.delete(pemain)
-            }
+            itemView.btn_delete.setOnClickListener { handler.onClick(adapterPosition, pemain) }
         }
     }
+
+    interface ClickHandler {
+        fun onClick(position: Int, pemain: Pemain)
+    }
+
 }

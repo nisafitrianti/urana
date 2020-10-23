@@ -89,6 +89,21 @@
                 android:layout_height="wrap_content"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 tools:listitem="@layout/list_item_pemain" />
+
+            <Button
+                android:id="@+id/btn_play"
+                android:layout_width="match_parent"
+                android:layout_height="58dp"
+                android:background="@drawable/btn_radius"
+                android:backgroundTint="@color/colorAccent"
+                android:text="Mulai Permainan"
+                android:textSize="18dp"
+                android:textColor="#ffff"
+                android:textStyle="bold"
+                android:textAllCaps="false"
+                android:layout_margin="18dp"
+                android:layout_gravity="center"/>
+
         </LinearLayout>
     </ScrollView>
 </layout>

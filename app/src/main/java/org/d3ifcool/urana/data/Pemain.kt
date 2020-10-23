@@ -10,7 +10,7 @@ data class Pemain (
     @PrimaryKey(autoGenerate = true)
     val id: Int = 0,
     val name: String,
-    val score: String
+    val score: Int
 )
 
 @Dao

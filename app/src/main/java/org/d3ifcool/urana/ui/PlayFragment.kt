@@ -31,7 +31,12 @@ class PlayFragment : Fragment() {
 
     lateinit var binding: FragmentPlayBinding
     private lateinit var adapter : PemainAdapter
-    private val listPemain: MutableList<Pemain> = mutableListOf()
+
+    private val buttonHandler = object : PemainAdapter.ClickHandler {
+        override fun onClick(position: Int, pemain:Pemain) {
+            viewModel.delete(pemain)
+        }
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -39,6 +44,8 @@ class PlayFragment : Fragment() {
     ): View? {
         binding = DataBindingUtil.inflate(inflater,R.layout.fragment_play, container, false)
         FirebaseApp.initializeApp(requireContext())
+
+        binding.btnPlay.visibility = View.GONE
 
         binding.lifecycleOwner = viewLifecycleOwner
 
@@ -52,20 +59,24 @@ class PlayFragment : Fragment() {
             if (namaPemain.isEmpty()) {
                 showMessage(R.string.wajib_diisi)
             }else {
-                val dataPemain = Pemain(name = namaPemain, score = "")
+                val dataPemain = Pemain(name = namaPemain, score = 0)
                 viewModel.insertData(dataPemain)
+                binding.btnPlay.visibility = View.VISIBLE
             }
         }
 
-        viewModel.data.observe(viewLifecycleOwner, Observer {
-            adapter.submitList(listPemain)
-            Toast.makeText(requireContext(), listPemain.get(0).name, Toast.LENGTH_LONG).show()
-        })
-
-        adapter = PemainAdapter()
+        adapter = PemainAdapter(buttonHandler)
         val itemDecor = DividerItemDecoration(this.context, RecyclerView.VERTICAL)
         binding.recyclerView.addItemDecoration(itemDecor)
         binding.recyclerView.adapter = adapter
+
+        viewModel.data.observe(viewLifecycleOwner, Observer {
+            adapter.submitList(it)
+        })
+
+        binding.btnPlay.setOnClickListener {
+            view?.findNavController()?.navigate(R.id.action_playFragment_to_pertanyaanFragment)
+        }
 
         return binding.root
     }

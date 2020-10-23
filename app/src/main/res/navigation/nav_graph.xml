@@ -57,5 +57,16 @@
         <action
             android:id="@+id/action_playFragment_to_home2"
             app:destination="@id/home2" />
+        <action
+            android:id="@+id/action_playFragment_to_pertanyaanFragment"
+            app:destination="@id/pertanyaanFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/pertanyaanFragment"
+        android:name="org.d3ifcool.urana.ui.PertanyaanFragment"
+        android:label="PertanyaanFragment" >
+        <action
+            android:id="@+id/action_pertanyaanFragment_to_home2"
+            app:destination="@id/home2" />
     </fragment>
 </navigation>
