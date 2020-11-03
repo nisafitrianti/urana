@@ -66,8 +66,6 @@ class PlayFragment : Fragment() {
         }
 
         adapter = PemainAdapter(buttonHandler)
-        val itemDecor = DividerItemDecoration(this.context, RecyclerView.VERTICAL)
-        binding.recyclerView.addItemDecoration(itemDecor)
         binding.recyclerView.adapter = adapter
 
         viewModel.data.observe(viewLifecycleOwner, Observer {
@@ -75,7 +73,7 @@ class PlayFragment : Fragment() {
         })
 
         binding.btnPlay.setOnClickListener {
-            view?.findNavController()?.navigate(R.id.action_playFragment_to_pertanyaanFragment)
+            view?.findNavController()?.navigate(R.id.action_playFragment_to_permainanFragment)
         }
 
         return binding.root

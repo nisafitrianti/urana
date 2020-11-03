@@ -30,4 +30,24 @@ class PemainViewModel(private val db : PemainDao): ViewModel() {
         }
     }
 
+    fun addSrore(id : Int){
+        viewModelScope.launch {
+            withContext(Dispatchers.IO) {
+                var pemain = db.getById(id).get(0)
+                pemain.score += 2
+                db.update(pemain)
+            }
+        }
+    }
+
+    fun minSrore(id : Int){
+        viewModelScope.launch {
+            withContext(Dispatchers.IO) {
+                var pemain = db.getById(id).get(0)
+                pemain.score -= 2
+                db.update(pemain)
+            }
+        }
+    }
+
 }

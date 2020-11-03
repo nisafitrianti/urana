@@ -10,13 +10,16 @@ data class Pemain (
     @PrimaryKey(autoGenerate = true)
     val id: Int = 0,
     val name: String,
-    val score: Int
+    var score: Int
 )
 
 @Dao
 interface PemainDao {
     @Insert
     fun insertData(pemain: Pemain)
+
+    @Update
+    fun update(pemain: Pemain)
 
     @Query("SELECT * FROM Pemain ORDER BY name")
     fun getData(): LiveData<List<Pemain>>
@@ -26,6 +29,10 @@ interface PemainDao {
 
     @Delete
     fun delete(pemain: Pemain)
+
+    @Query("SELECT * FROM Pemain WHERE id = :id")
+    fun getById(id: Int) : List<Pemain>
+
 }
 
 @Database(entities = [Pemain::class], version = 1, exportSchema = false)

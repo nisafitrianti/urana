@@ -58,8 +58,8 @@
             android:id="@+id/action_playFragment_to_home2"
             app:destination="@id/home2" />
         <action
-            android:id="@+id/action_playFragment_to_pertanyaanFragment"
-            app:destination="@id/pertanyaanFragment" />
+            android:id="@+id/action_playFragment_to_permainanFragment"
+            app:destination="@id/permainanFragment" />
     </fragment>
     <fragment
         android:id="@+id/pertanyaanFragment"
@@ -68,5 +68,44 @@
         <action
             android:id="@+id/action_pertanyaanFragment_to_home2"
             app:destination="@id/home2" />
+        <action
+            android:id="@+id/action_pertanyaanFragment_to_menangFragment"
+            app:destination="@id/menangFragment" />
+        <action
+            android:id="@+id/action_pertanyaanFragment_to_permainanFragment"
+            app:destination="@id/permainanFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/permainanFragment"
+        android:name="org.d3ifcool.urana.ui.PermainanFragment"
+        android:label="PermainanFragment" >
+        <action
+            android:id="@+id/action_permainanFragment_to_pertanyaanFragment"
+            app:destination="@id/pertanyaanFragment" />
+        <action
+            android:id="@+id/action_permainanFragment_to_poinPermainanFragment"
+            app:destination="@id/poinPermainanFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/menangFragment"
+        android:name="org.d3ifcool.urana.ui.MenangFragment"
+        android:label="MenangFragment" >
+        <action
+            android:id="@+id/action_menangFragment_to_permainanFragment"
+            app:destination="@id/permainanFragment" />
+        <action
+            android:id="@+id/action_menangFragment_to_home2"
+            app:destination="@id/home2" />
+    </fragment>
+    <fragment
+        android:id="@+id/poinPermainanFragment"
+        android:name="org.d3ifcool.urana.ui.PoinPermainanFragment"
+        android:label="PoinPermainanFragment" >
+        <action
+            android:id="@+id/action_poinPermainanFragment_to_permainanFragment"
+            app:destination="@id/permainanFragment" />
+        <action
+            android:id="@+id/action_poinPermainanFragment_to_menangFragment"
+            app:destination="@id/menangFragment" />
     </fragment>
 </navigation>

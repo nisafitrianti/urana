@@ -9,12 +9,13 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.list_item_pemain.view.*
+import kotlinx.android.synthetic.main.list_item_poinpemain.view.*
 import org.d3ifcool.urana.R
 import org.d3ifcool.urana.data.Pemain
 import org.d3ifcool.urana.ui.PlayFragment
 import org.d3ifcool.urana.viewmodel.PemainViewModel
 
-class PemainAdapter(private val handler: ClickHandler) : ListAdapter<Pemain, PemainAdapter.ViewHolder>(DIFF_CALLBACK) {
+class PoinPemainAdapter : ListAdapter<Pemain, PoinPemainAdapter.ViewHolder>(DIFF_CALLBACK) {
 
     companion object {
         private val DIFF_CALLBACK = object : DiffUtil.ItemCallback<Pemain>()
@@ -32,7 +33,7 @@ class PemainAdapter(private val handler: ClickHandler) : ListAdapter<Pemain, Pem
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val inflater = LayoutInflater.from(parent.context)
-        val view = inflater.inflate(R.layout.list_item_pemain, parent, false)
+        val view = inflater.inflate(R.layout.list_item_poinpemain, parent, false)
         return ViewHolder(view)
     }
 
@@ -43,13 +44,9 @@ class PemainAdapter(private val handler: ClickHandler) : ListAdapter<Pemain, Pem
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView)
     {
         fun bind(pemain: Pemain){
-            itemView.pemainTextView.text = pemain.name
-            itemView.btn_delete.setOnClickListener { handler.onClick(adapterPosition, pemain) }
+            itemView.tv_namaPemain.text = pemain.name
+            itemView.tv_poinPemain.text = pemain.score.toString()
         }
-    }
-
-    interface ClickHandler {
-        fun onClick(position: Int, pemain: Pemain)
     }
 
 }
